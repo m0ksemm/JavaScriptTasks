@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript</title>
+    <script>
+        function getMiddle(bottom_, top_) { 
+            if ((bottom_ + top_)  % 2 == 0 )
+                return ((bottom_ + top_) / 2);
+
+            else return ((bottom_ + top_ + 1) / 2);
+        }
+    </script>
+</head>
+<body>
+    <script>
+        alert("Guess the number from 1 to 100!");
+        let bottom_ = 0;
+        let top_ = 100;
+
+        while (true){
+            let middle_ = getMiddle(bottom_, top_);
+            if (confirm("Is your number " + middle_  + "??"))  {
+                break;
+            }
+            else {
+                if (confirm("Is your number MORE than " + middle_ + "??"))  {
+                    bottom_ = middle_ + 1;
+                }
+                else {
+                    top_ = middle_ - 1;
+                }
+            }
+        }
+    </script>
+    <h1>JS Task3</h1>
+</body>
+</html>
+

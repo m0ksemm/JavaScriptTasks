@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript</title>
+    <script>
+        function setSex(value)
+        { 
+            switch (value) {
+                case "M":
+                case "m":
+                    value = "Male";
+                    break;
+                case "F":
+                case "f":
+                    value = "Female";
+                    break;
+                case "O":
+                case "o":
+                    value = "Other";
+                    break;
+                default:
+                    value ="Not chosen";
+            }
+            return value;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        do {
+            let name = prompt("Enter your name and surname:", "Billy");
+            let surname = prompt("Enter your name and surname:", "Harington");
+            let sex = prompt("Enter your sex(m - male, f - female, o - other):", "m");
+            sex = setSex(sex);
+            let age = prompt("Enter your age:", "20");
+            age = parseInt(age);
+            let email = prompt("Enter your Email:", "youremail@gmail.com");
+            let message = "Name: " + name + "\nSurname: " + surname + "\nSex: " + sex + "\nAge: " + age + "\nEmail: " + email + "\n\nIs everything correct?"
+            if (confirm(message)){
+                alert("Thank you for your information!");
+                break;
+            }
+            else continue;  
+        }
+        while (true);
+    </script>
+    <h1>JS Task1</h1>
+</body>
+</html>
+
