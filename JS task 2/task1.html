@@ -7,8 +7,16 @@
 <body>
     <script>
         document.write("<h3>Task1</h3>");
-        document.write("<p>Implement the simplest version of the test, one by one issuing the user questions that require monosyllabic answers (“Yes” and “No”).After passing the test, display the result. Questions and assessments for store each question in the script as arrays. </p>");
-        let questions = ["Is it true that there are only 2 principles of OOP?", "Is HTML a programming language?", "Is JavaScript the most popular programming language?", "CSS is Cascading Style Sheets", "PHP is NOT used in WEB programming", "C# is used in WEB programming"];
+        document.write("<p>Implement the simplest version of the test," +
+           "one by one issuing the user questions that require monosyllabic " + 
+           "answers (“Yes” and “No”).After passing the test, display the result."+ 
+           " Questions and assessments for store each question in the script as arrays. </p>");
+        let questions = ["Is it true that there are only 2 principles of OOP?", 
+                        "Is HTML a programming language?", 
+                        "Is JavaScript the most popular programming language?", 
+                        "CSS is Cascading Style Sheets", 
+                        "PHP is NOT used in WEB programming", 
+                        "C# is used in WEB programming"];
         let correctAnswers =[false, false, true, true, false, true];
         do {
             let userAnswers = [];
