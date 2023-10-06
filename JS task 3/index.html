@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2023/10/06
+        let date = new Date(prompt("Enter current date: year/month/day"));
+        alert(date.getMonth() + "!!!");
+
+        
+        let date2 = new Date(date);
+
+        while (date2.getDay() != 1) {
+            date2.setDate(date2.getDate() - 1);
+        }
+        let colorHead = "";
+        if (date2.getMonth() == 0 || date2.getMonth() == 1 || date2.getMonth() == 11)
+        {
+            colorHead = "lightblue";
+        }
+        else if (date2.getMonth() >= 2 && date2.getMonth() <=4)
+        {
+            colorHead = "lightgreen";
+        }
+        else if (date2.getMonth() >= 5 && date2.getMonth() <=7)
+        {
+            colorHead = "yellow";
+        }
+        else if (date2.getMonth() >= 8 && date2.getMonth() <=10)
+        {
+            colorHead = "orange";
+        }
+
+
+        date2.setDate(date.getDate() - date.getDate())
+        alert(date2 + "1");
+        alert(date + "2");
+        alert(date2.getDay() + " 3");
+        
+        
+
+        
+
+        document.write("<div style=\"display: flex; flex-direction: column; align-items: center;\">");
+            document.write("<table style=\"width: 500px; border: 1px solid black; background-color: " + colorHead +"; border-collapse:collapse;\">");
+                document.write("<thead style=\"text-align: center;\">");
+                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Mon</td>");
+                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Tue</td>");
+                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Wed</td>");
+                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Thu</td>");
+                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Fri</td>");
+                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Sat</td>");
+                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Sun</td>");
+                document.write("</thead>");
+            document.write("</table>");
+        document.write("</div>");
+
+        
+
+    </script>
+    
+        <table style="width: 500px; border: 1px solid black; border-collapse:collapse;">
+            <thead style="text-align: center; background-color: red;">
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">Mon</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">Tue</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">Wed</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">Thu</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">Fri</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">Sat</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">Sun</td>
+            </thead>
+            <tr style="text-align: center;"> 
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">w</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">w</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">w</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">w</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">w</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">w</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px;">w</td>
+            </tr>
+        </table>
+    
+</body>
+</html>
