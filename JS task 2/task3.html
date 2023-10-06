@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>
+        document.write("<h3>Task3</h3>");
+        document.write("<p>Divide the entered http address into its component parts. "+
+                        "For example, the address \"http://www.ufa.com.ua/utilites/hdd/out.php?sort=2\"" +
+                        "is divided into the following components: <br />"+
+                        "protocol: http: <br />" +
+                        "host: www.ufa.com.ua <br />"+
+                        "path: /utilites/hdd/ <br />"+
+                        "filename: out.php <br />"+
+                        "query string: sort=2 </p>");
+        
+        let address = prompt("Enter the http address:");
+
+        document.write("<h4>Divided http address:</h4>");
+        
+        let A = address.split("/");
+        document.write("protocol: " + A[0] + "<br />");
+        document.write("host: " + A[2] + "<br />");
+        let path = "";
+        for (let i = 3; i < A.length - 1; i++) {
+            path += A[i] + "/";
+        }
+        document.write("path: " + path + "<br />");
+        
+        let B = A[A.length - 1].split("?");
+        document.write("filename: " + B[0] + "<br />");
+        document.write("query string: " + B[1] + "<br />");
+    </script>
+</body>
+</html>
+
