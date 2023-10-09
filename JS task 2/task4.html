@@ -8,89 +8,30 @@
     <script>
         document.write("<h3>Task4</h3>");
         document.write("<p>Вывести на страницу шахматную доску, используя DOM</p>");
-        document.write(
-            "<table style=\"border: 1px solid black; border-collapse:collapse;\"> " 
-                +"<tr>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +" <td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"</tr>	"
-                +"<tr>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                +"</tr>"
-                +"<tr>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +" <td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                +"</tr>"
-                +"<tr>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"</tr>		"
-                +"<tr>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                +"</tr>	"
-                +"<tr>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                +"</tr>	"
-                +"<tr> "
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +" <td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                +"</tr>	"
-                +"<tr> "
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: yellow;\">&nbsp;</td>"
-                    +"<td style=\"border: 1px solid black; margin: 0; padding: 3px; width: 40px; height: 40px; background-color: red;\">&nbsp;</td>"
-                +"</tr>	"
-            +"</table>");
+        document.write("<table style=\"border: 1px solid black; border-collapse:collapse;\"> " );
+        for (let i = 0; i < 8; i++) {
+            document.write("<tr>");
+                if (i % 2 == 0) {
+                    color1 = "red";
+                    color2 = "yellow";
+                }
+                else {
+                    color1 = "yellow";
+                    color2 = "red";
+                }
+                for (let j = 0; j < 8; j++) {
+                    if (j % 2 == 0) {
+                        document.write("<td style=\"border: 1px solid black; margin: 0; "
+                        +"padding: 3px; width: 40px; height: 40px; background-color: " + 
+                        color1 + ";\">&nbsp;</td>");
+                    }
+                    else document.write("<td style=\"border: 1px solid black; margin: 0; "
+                        +"padding: 3px; width: 40px; height: 40px; background-color: " + 
+                        color2 + ";\">&nbsp;</td>");
+                }
+            document.write("</tr>");
+        }
+        document.write("</table>");
     </script>
     
 </body>
