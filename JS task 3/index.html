@@ -26,7 +26,6 @@
                 date2.setDate(date2.getDate() - 1);
                 }
             }
-
         }
         else {
             while (date2.getMonth() != date.getMonth() - 1) {
@@ -69,11 +68,28 @@
         
         let date3 = new Date(date);
         
-        while (date3.getMonth() != date.getMonth() + 1){
-            date3.setDate(date3.getDate() + 1);
+        if (date.getMonth() == 11) {
+            while (date3.getDate() != 31) {
+                date3.setDate(date3.getDate() + 1);
+            }
+            if (date3.getDay() != 1) 
+            {
+                date3.setDate(1);
+                date3.setMonth(0);
+                date3.setFullYear(date.getFullYear() + 1);
+                while (date3.getDay() != 1) {
+                date3.setDate(date3.getDate() + 1);
+                }
+            }
         }
-        while (date3.getDay() != 0) {
-           date3.setDate(date3.getDate() + 1);
+        else {
+            while (date3.getMonth() != date.getMonth() + 1){
+                date3.setDate(date3.getDate() + 1);
+                alert(" a!!!!!!!");
+            }
+            while (date3.getDay() != 0) {
+                date3.setDate(date3.getDate() + 1);
+            }
         }
         let days = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
 
