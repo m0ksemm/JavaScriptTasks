@@ -8,44 +8,64 @@
 <body>
     <script>
         // 2023/10/09
+        // 1968/1/09
         let date = new Date(prompt("Enter current date: year/month/day"));
-        //alert(date.getMonth() + "!!!");
-
         
         let date2 = new Date(date);
-        while (date2.getMonth() != date.getMonth() - 1) {
-            date2.setDate(date2.getDate() - 1);
-            //alert(date2 + "  !!  " );
+        if (date.getMonth() == 0) {
+            while (date2.getDate() != 1) 
+            {
+                date2.setDate(date2.getDate() - 1);
+            }
+            if (date2.getDay() != 1) 
+            {
+                date2.setDate(31);
+                date2.setMonth(11);
+                date2.setFullYear(date.getFullYear() - 1);
+                while (date2.getDay() != 1) {
+                date2.setDate(date2.getDate() - 1);
+                }
+            }
+
         }
-        while (date2.getDay() != 1) {
-            date2.setDate(date2.getDate() - 1);
-            //alert(date2 + "  !!  " );
+        else {
+            while (date2.getMonth() != date.getMonth() - 1) {
+                date2.setDate(date2.getDate() - 1);
+            }
+            alert("1!");
+            while (date2.getDay() != 1) {
+                date2.setDate(date2.getDate() - 1);
+            }
         }
+        
+        alert("2!");
         let colorHead = "";
-        if (date2.getMonth() == 0 || date2.getMonth() == 1 || date2.getMonth() == 11)
+        let bgpucture = "";
+        if (date.getMonth() == 0 || date.getMonth() == 1 || date.getMonth() == 11)
         {
             colorHead = "lightblue";
+            bgpucture ="./seasons/1.JPG";
         }
-        else if (date2.getMonth() >= 2 && date2.getMonth() <=4)
+        else if (date.getMonth() >= 2 && date.getMonth() <=4)
         {
             colorHead = "lightgreen";
+            bgpucture ="./seasons/2.JPG";
         }
-        else if (date2.getMonth() >= 5 && date2.getMonth() <=7)
+        else if (date.getMonth() >= 5 && date.getMonth() <=7)
         {
             colorHead = "yellow";
+            bgpucture ="./seasons/3.JPG";
         }
-        else if (date2.getMonth() >= 8 && date2.getMonth() <=10)
+        else if (date.getMonth() >= 8 && date.getMonth() <=10)
         {
             colorHead = "orange";
+            bgpucture ="./seasons/4.JPG";
         }
 
 
 
         
         alert(date2 + " 222!!!!!!!");
-        //alert(date + "2");
-        //alert(date2.getDay() + " 3");
-        
         
         let date3 = new Date(date);
         
@@ -55,31 +75,27 @@
         while (date3.getDay() != 0) {
            date3.setDate(date3.getDate() + 1);
         }
-        alert(date3 + " 333!!!!!");
+        let days = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+
         document.write("<div style=\"display: flex; flex-direction: column; align-items: center;\">");
-            document.write("<table style=\"width: 500px; border: 1px solid black; background-color: " + colorHead +"; border-collapse:collapse;\">");
-                document.write("<thead style=\"text-align: center;\">");
-                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Mon</td>");
-                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Tue</td>");
-                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Wed</td>");
-                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Thu</td>");
-                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Fri</td>");
-                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Sat</td>");
-                    document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">Sun</td>");
+            
+
+            document.write("<table style=\"width: 500px; border: 1px solid black; border-collapse:collapse;  background-image: url(" + bgpucture + "); font-size: 2em; font-weight: bold;\">");
+                document.write("<thead style=\"text-align: center; background-color: " + colorHead +";\">");
+                    for (let i = 0; i < days.length; i++) {
+                        document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\">"+ days[i] +"</td>");
+                    }
                 document.write("</thead>");
             
 
                     // 2023/10/09
 
-        let days = date3.getDate() - date2.getDate();
-        alert("!!!!!!!!!!!   " + days + " !!!!!");
-        alert( " 333!!!!!");
-        
+
         while (date3.getDate() != date2.getDate() && date3.getMonth() != date2.getMonth()){
             let i = 0;
             document.write("<tr style=\"text-align: center;\">");
             for (i = 0; i < 7; i++) {
-                document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px;\"> "+ date2.getDate() +" </td>");
+                document.write("<td style=\"border: 1px solid black; margin: 0; padding: 3px; background-color: transparent;\"> "+ date2.getDate() +" </td>");
                 date2.setDate(date2.getDate() + 1);
             }
             
@@ -90,9 +106,9 @@
         document.write("</div>");
     </script>
     
-        <table style="width: 500px; border: 1px solid black; border-collapse:collapse;">
+        <table style="width: 500px; border: 1px solid black; border-collapse:collapse; background-image: url(./seasons/1.JPG);" >
             <thead style="text-align: center; background-color: red;">
-                <td style="border: 1px solid black; margin: 0; padding: 3px;">Mon</td>
+                <td style="border: 1px solid black; margin: 0; padding: 3px; background-color: transparent; font-size: 1.5em; font-weight: bold;">Mon</td>
                 <td style="border: 1px solid black; margin: 0; padding: 3px;">Tue</td>
                 <td style="border: 1px solid black; margin: 0; padding: 3px;">Wed</td>
                 <td style="border: 1px solid black; margin: 0; padding: 3px;">Thu</td>
