@@ -44,6 +44,7 @@
 
         document.body.addEventListener("keydown", function(event) {
             if (event.ctrlKey && (event.key === 'e' || event.keyCode === 'E')) {
+                event.preventDefault();
                 textBox.style.display = "none";
                 textInfo.style.display = "block"
                 textInfo.innerText = text = textBox.innerText;
@@ -51,15 +52,15 @@
         });
         document.body.addEventListener("keydown", function(event) {
             if (event.ctrlKey && (event.key === 's' || event.keyCode === 'S')) {
+                event.preventDefault();
                 textBox.style.display = "block";
                 textInfo.style.display = "none";
                 textBox.innerText = textInfo.value;
             }
         });
 
+
         
-
-
         ////task2
         let firstnames = ["Mark", "Larry", "Timothy", "Bill"]; 
         let lastnames = ["Zuckenberg", "Page", "Cook", "Gates"]; 
