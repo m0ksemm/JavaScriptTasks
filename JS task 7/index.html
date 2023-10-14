@@ -68,7 +68,22 @@
         let companies = ["Facebook", "Google", "Apple", "Microsoft"]; 
         
          function clickSort(e) {
-            firstnames.sort();
+            
+            let strings = [];
+            for (let i = 0; i < firstnames.length; i++){
+                strings[i] = firstnames[i] + "/" + lastnames[i] + "/" + ages[i] + "/" + companies[i];
+            }
+            strings.sort();
+
+            //alert(strings);
+            for (let i = 0; i < strings.length; i++){
+                let A = strings[i].split("/");
+                firstnames[i] = A[0];
+                lastnames[i] = A[1];
+                ages[i] = A[2];
+                companies[i] = A[3];
+            }
+
             let j = 0;
 
             for (let i = 0; i < firstnames.length; i++) {
