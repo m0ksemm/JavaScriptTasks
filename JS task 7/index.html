@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Создание, добавление и удаление элементов</title>
+    <style>
+        table {
+            width: 400px;
+            border: 2px solid black;
+            border-collapse: collapse;
+            caption-side: top;
+        }
+        thead {
+            text-align: center;
+            font-weight: bold;
+        }
+        th, td {
+            border: 2px solid black;
+            margin: 0;
+            padding: 5px;
+            
+        }
+    </style>
+</head>
+<body style="background-color:antiquewhite;">
+    <div class="header1">
+        <p>Press Ctrl+E for edit text <br> Press Ctrl+S to save text</p>
+    </div>
+    <hr>
+    <div id="textBox"  style="display: block; width: 400px; border: 1px solid black; border-radius: 5px; padding: 5px;">
+        In publishing and graphic design, Lorem ipsum is a placeholder 
+        text commonly used to demonstrate the visual form of a document 
+        or a typeface without relying on meaningful content. Lorem ipsum 
+        may be used as a placeholder before final copy is available.
+    </div>
+    <textarea id="textInfo" name="text_info" cols="20" rows="5" style="display: none; width: 400px; border: 1px solid black; border-radius: 5px; padding: 5px;"></textarea>
+    <br>
+    <br>
+    
+    <script>
+        ////task2
+        let textBox = document.getElementById('textBox');
+        let textInfo = document.getElementById('textInfo');
+
+        document.body.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && (event.key === 'e' || event.keyCode === 'E')) {
+                textBox.style.display = "none";
+                textInfo.style.display = "block"
+                textInfo.innerText = text = textBox.innerText;
+            }
+        });
+        document.body.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && (event.key === 's' || event.keyCode === 'S')) {
+                textBox.style.display = "block";
+                textInfo.style.display = "none";
+                textBox.innerText = textInfo.value;
+            }
+        });
+
+        
+
+
+        ////task2
+        let firstnames = ["Mark", "Larry", "Timothy", "Bill"]; 
+        let lastnames = ["Zuckenberg", "Page", "Cook", "Gates"]; 
+        let ages = [34, 45, 57, 62]; 
+        let companies = ["Facebook", "Google", "Apple", "Microsoft"]; 
+        
+         function clickSort(e) {
+            firstnames.sort();
+            let j = 0;
+
+            for (let i = 0; i < firstnames.length; i++) {
+                let f1 = document.getElementById("firstname " + i + " " + j);
+                f1.innerText = firstnames[i];
+                let f2 = document.getElementById("lastname " + i + " " + j);
+                f2.innerText = lastnames[i];
+                let f3 = document.getElementById("age " + i + " " + j);
+                f3.innerText = ages[i];
+                let f4 = document.getElementById("company " + i + " " + j);
+                f4.innerText = companies[i];
+                j++;
+                alert("!");
+            } 
+        }
+        document.write("</table>");
+        
+
+
+        document.write("<table>");
+        document.write("<thead>");
+        document.write("<td id=\"firstnames\">Firstname</td>");
+        document.write("<td id=\"lastnames\">Lastname</td>");
+        document.write("<td id=\"ages\">Age</td>");
+        document.write("<td id=\"companies\">Company</td>");
+        document.write("</thead>");
+        
+        let j = 0;
+        for (let i = 0; i < firstnames.length; i++) {
+            document.write("<tr>");
+            document.write("<td id=\"firstname "+ i + " " + j + "\">" + firstnames[i] + "</td>");
+            document.write("<td id=\"lastname "+ i + " " + j + "\">" + lastnames[i] + "</td>");
+            document.write("<td id=\"age "+ i + " " + j + "\">" + ages[i] + "</td>");
+            document.write("<td id=\"company "+ i + " " + j + "\">" + companies[i] + "</td>");
+            document.write("</tr>");
+            j++;
+        } 
+        document.write("</table>");
+        
+        let fn = document.getElementById("firstnames");
+        let ln = document.getElementById("lastnames");
+        let ag = document.getElementById("ages");
+        let cmp = document.getElementById("companies");
+
+        fn.addEventListener("click", clickSort);
+
+    </script>
+</body>
+</html>
