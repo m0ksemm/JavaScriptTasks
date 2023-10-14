@@ -19,7 +19,6 @@
             border: 2px solid black;
             margin: 0;
             padding: 5px;
-            
         }
     </style>
 </head>
@@ -67,15 +66,12 @@
         let ages = [34, 45, 57, 62]; 
         let companies = ["Facebook", "Google", "Apple", "Microsoft"]; 
         
-         function clickSort(e) {
-            
+         function sortFirstname(e) {
             let strings = [];
             for (let i = 0; i < firstnames.length; i++){
                 strings[i] = firstnames[i] + "/" + lastnames[i] + "/" + ages[i] + "/" + companies[i];
             }
             strings.sort();
-
-            //alert(strings);
             for (let i = 0; i < strings.length; i++){
                 let A = strings[i].split("/");
                 firstnames[i] = A[0];
@@ -83,9 +79,7 @@
                 ages[i] = A[2];
                 companies[i] = A[3];
             }
-
             let j = 0;
-
             for (let i = 0; i < firstnames.length; i++) {
                 let f1 = document.getElementById("firstname " + i + " " + j);
                 f1.innerText = firstnames[i];
@@ -96,13 +90,104 @@
                 let f4 = document.getElementById("company " + i + " " + j);
                 f4.innerText = companies[i];
                 j++;
-                alert("!");
             } 
         }
+        function sortLastname(e){
+            let strings = [];
+            for (let i = 0; i < firstnames.length; i++) {
+                strings[i] = lastnames[i] + "/" +  firstnames[i] + "/" + ages[i] + "/" + companies[i];
+            }
+            strings.sort();
+            for (let i = 0; i < strings.length; i++) {
+                let A = strings[i].split("/");
+                firstnames[i] = A[1];
+                lastnames[i] = A[0];
+                ages[i] = A[2];
+                companies[i] = A[3];
+            }
+            let j = 0;
+            for (let i = 0; i < firstnames.length; i++) {
+                let f1 = document.getElementById("firstname " + i + " " + j);
+                f1.innerText = firstnames[i];
+                let f2 = document.getElementById("lastname " + i + " " + j);
+                f2.innerText = lastnames[i];
+                let f3 = document.getElementById("age " + i + " " + j);
+                f3.innerText = ages[i];
+                let f4 = document.getElementById("company " + i + " " + j);
+                f4.innerText = companies[i];
+                j++;
+            } 
+        }
+        function sortCompany(e){
+            let strings = [];
+            for (let i = 0; i < firstnames.length; i++){
+                strings[i] = companies[i] + "/" + lastnames[i] + "/" + ages[i] + "/" + firstnames[i];
+            }
+            strings.sort();
+            for (let i = 0; i < strings.length; i++) {
+                let A = strings[i].split("/");
+                firstnames[i] = A[3];
+                lastnames[i] = A[1];
+                ages[i] = A[2];
+                companies[i] = A[0];
+            }
+            let j = 0;
+            for (let i = 0; i < firstnames.length; i++) {
+                let f1 = document.getElementById("firstname " + i + " " + j);
+                f1.innerText = firstnames[i];
+                let f2 = document.getElementById("lastname " + i + " " + j);
+                f2.innerText = lastnames[i];
+                let f3 = document.getElementById("age " + i + " " + j);
+                f3.innerText = ages[i];
+                let f4 = document.getElementById("company " + i + " " + j);
+                f4.innerText = companies[i];
+                j++;
+            } 
+        }
+
+        function numUp(a1, a2) {
+            return a1 - a2;
+        }
+        function sortAge(e){
+            let strings = [];
+            for (let i = 0; i < firstnames.length; i++){
+                strings[i] =  firstnames[i] + "/" + lastnames[i] + "/" + ages[i] + "/" + companies[i];
+            }
+            let ags = [];
+            for (let i = 0; i < firstnames.length; i++){
+                ags[i] =  ages[i];
+            }
+            ags.sort(numUp);
+            for (let i = 0; i < ags.length; i++){
+                for (let j = 0; j < strings.length; j++) {
+                    if (strings[j].indexOf(ags[i]) != -1) {
+                        ags[i] = strings[j];
+                    }
+                }
+            }
+            for (let i = 0; i < strings.length; i++){
+                let A = ags[i].split("/");
+                firstnames[i] = A[0];
+                lastnames[i] = A[1];
+                ages[i] = A[2];
+                companies[i] = A[3];
+            }
+            let j = 0;
+            for (let i = 0; i < firstnames.length; i++) {
+                let f1 = document.getElementById("firstname " + i + " " + j);
+                f1.innerText = firstnames[i];
+                let f2 = document.getElementById("lastname " + i + " " + j);
+                f2.innerText = lastnames[i];
+                let f3 = document.getElementById("age " + i + " " + j);
+                f3.innerText = ages[i];
+                let f4 = document.getElementById("company " + i + " " + j);
+                f4.innerText = companies[i];
+                j++;
+            }
+        }
+
         document.write("</table>");
         
-
-
         document.write("<table>");
         document.write("<thead>");
         document.write("<td id=\"firstnames\">Firstname</td>");
@@ -128,8 +213,10 @@
         let ag = document.getElementById("ages");
         let cmp = document.getElementById("companies");
 
-        fn.addEventListener("click", clickSort);
-
+        fn.addEventListener("click", sortFirstname);
+        ln.addEventListener("click", sortLastname);
+        ag.addEventListener("click", sortAge);
+        cmp.addEventListener("click", sortCompany);
     </script>
 </body>
 </html>
