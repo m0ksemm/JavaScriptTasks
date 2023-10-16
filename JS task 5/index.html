@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ООП в функциональном стиле</title>
+</head>
+<body>
+    <script>
+        class ExtendedDate extends Date {
+            constructor() {
+                super();
+            }
+
+            formatDateText() {
+                const months = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+                ];
+                const day = this.getDate();
+                const month = this.getMonth();
+                return `${day} ${months[month]}`;
+            }
+
+            isFuture() {
+                return this.getTime() >= Date.now();
+            }
+
+            isLeapYear() {
+                const year = this.getFullYear();
+                return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            }
+
+            getNextDay() {
+                const nextDay = new ExtendedDate(this);
+                nextDay.setDate(nextDay.getDate() + 1);
+                return nextDay;
+            }
+
+            get year() {
+                return this.getFullYear();
+            }
+
+            set year(value) {
+                this.setFullYear(value);
+            }
+
+            get month() {
+                return this.getMonth();
+            }
+
+            set month(value) {
+                this.setMonth(value);
+            }
+
+            get day() {
+                return this.getDate();
+            }
+
+            set day(value) {
+                this.setDate(value);
+            }
+        }
+
+        const myDate = new ExtendedDate();
+
+        document.write("Text representation of date: " + myDate.formatDateText() + "<br />");
+        document.write("Is this a future date? " +  myDate.isFuture() + "<br />");
+        document.write("Is this a leap year? " + myDate.isLeapYear() + "<br />");
+        document.write("Следующая дата: "+ myDate.getNextDay() + "<br /><br />");
+
+        myDate.year = 2024;
+        myDate.month = 2;
+        myDate.day = 15;
+        document.write("Text representation of date: " + myDate.formatDateText() + "<br />");
+        document.write("Year: " + myDate.year + "<br />");
+        document.write("Day: " + myDate.day + "<br />");
+        document.write("Month: " + myDate.month + "<br />");
+
+
+    </script>
+</body>
+</html>
