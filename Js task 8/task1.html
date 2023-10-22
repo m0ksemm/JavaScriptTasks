@@ -47,25 +47,25 @@
                 <tr>
                     <td class="allignright">Login</td>
                     <td>
-                        <input type="text" name="login" value="">
+                        <input type="text" name="login" id="login" value="">
                     </td>
                 </tr>
                 <tr>
                     <td class="allignright">Password</td>
                     <td>
-                        <input type="password" name="password" value="">
+                        <input type="password" name="password" id="password" value="">
                     </td>
                 </tr>
                 <tr>
                     <td class="allignright">Confirnation</td>
                     <td>
-                        <input type="password" name="confirnation" value="">
+                        <input type="password" name="confirnation" id="confirnation" value="">
                     </td>
                 </tr>
                 <tr>
                     <td class="allignright">Full name</td>
                     <td>
-                        <input type="text" name="full_name" value="">
+                        <input type="text" name="full_name" id="full_name" value="">
                     </td>
                 </tr>
                 <tr>
@@ -111,6 +111,44 @@
         </form>
     </div>
     <script>
+        let full_name = document.getElementById("full_name");
+
+        full_name.addEventListener("input", function (e) {
+            const full_nameValue = full_name.value;
+            if (/\d/.test(full_nameValue)) {
+                full_name.value = full_nameValue.replace(/\d/g, ""); 
+            }
+        });
+        function comparePasswords() {
+            let password = document.getElementById("password");
+            let confirmation = document.getElementById("confirnation");
+            if (password.value.length != confirmation.value.length) {
+                return false;
+            }
+            else {
+                let flag = true;
+                for (let i = 0; i < password.innerText.length; i++) {
+                    if (password.value[i] != confirmation.value[i]) {
+                        flag = false; 
+                        break;
+                    }
+                }
+                if (flag)
+                    return true;
+                else return false;
+            }
+        }
+
+
+        let snd = document.getElementById("button_send");
+
+        document.querySelector("form").addEventListener("submit", function(event) {
+            if (!comparePasswords()){
+                alert("The passwords are not equals!");
+                event.preventDefault();
+            }
+        });
+
 
     </script>
   </body>
