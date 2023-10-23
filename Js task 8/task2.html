@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Объект Window</title>
+    <style>
+        .question {
+            background-color: #eeeeee;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .number {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 5px;
+        }
+        .question div {
+            margin-top: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <form name="form1">
+        <div class="number" id="question1" >Question 1</div>
+        <div class="question" style="display: none;">
+            <div>In what year was JavaScript invented?</div>
+            <div><input type="radio" name="question1" value=""> <span>2010</span> </div>
+            <div><input type="radio" name="question1" value=""> <span>1995</span> </div>
+            <div><input type="radio" name="question1" value=""> <span>1980</span> </div>
+            <div><input type="radio" name="question1" value=""> <span>1970</span> </div>
+        </div> 
+
+        <div class="question" id="question2" style="display: none;">
+            <div>Which keywords are used to declare a variable in JavaScript??</div>
+            <div><input type="checkbox" name="question2" value=""> <span>const</span> </div>
+            <div><input type="checkbox" name="question2" value=""> <span>variable</span> </div>
+            <div><input type="checkbox" name="question2" value=""> <span>let</span> </div>
+            <div><input type="checkbox" name="question2" value=""> <span>var</span> </div>
+        </div> 
+
+        <div class="question" id="question3" style="display: none;">
+            <div>What is the result of the expression 5 + '5' in JavaScript?</div>
+            <div><input type="radio" name="question3" value=""> <span>10</span> </div>
+            <div><input type="radio" name="question3" value=""> <span>55</span> </div>
+            <div><input type="radio" name="question3" value=""> <span>25</span> </div>
+            <div><input type="radio" name="question3" value=""> <span>'55'</span> </div>
+        </div> 
+
+        <div class="question" id="question4" style="display: none;">
+            <div>Which function is used to print content to the console in JavaScript?</div>
+            <div><input type="radio" name="question4" value=""> <span>print()</span> </div>
+            <div><input type="radio" name="question4" value=""> <span>display()</span> </div>
+            <div><input type="radio" name="question4" value=""> <span>output()</span> </div>
+            <div><input type="radio" name="question4" value=""> <span>console.log()</span> </div>
+        </div> 
+
+        <div class="question" id="question5" style="display: none;">
+            <div>What does the === operator in JavaScript test for?</div>
+            <div><input type="radio" name="question5" value=""> <span>Equality</span> </div>
+            <div><input type="radio" name="question5" value=""> <span>Assignment</span> </div>
+            <div><input type="radio" name="question5" value=""> <span>Strict equality</span> </div>
+            <div><input type="radio" name="question5" value=""> <span>Inequality</span> </div>
+        </div> 
+
+        <div class="question" id="question6" style="display: none;">
+            <div>Which event is triggered when an HTML form is submitted in JavaScript?</div>
+            <div><input type="radio" name="question6" value=""> <span>onClick</span> </div>
+            <div><input type="radio" name="question6" value=""> <span>onHover</span> </div>
+            <div><input type="radio" name="question6" value=""> <span>onSubmit</span> </div>
+            <div><input type="radio" name="question6" value=""> <span>onChange</span> </div>
+        </div> 
+
+        <div class="question" id="question7" style="display: none;">
+            <div>What is the difference between let and const for variable declaration in JavaScript?</div>
+            <div><input type="radio" name="question7" value=""> <span>let allows reassignment, while const does not.</span> </div>
+            <div><input type="radio" name="question7" value=""> <span>let is used for global variables, while const is used for local variables.</span> </div>
+            <div><input type="radio" name="question7" value=""> <span>let is block-scoped, while const is function-scoped.</span> </div>
+            <div><input type="radio" name="question7" value=""> <span>let allows reassignment, while const creates a constant reference to the value.</span> </div>
+        </div>
+
+        <div class="question" id="question8" style="display: none;">
+            <div>How do you create a pop-up dialog box in JavaScript?</div>
+            <div><input type="radio" name="question8" value=""> <span>Using the alert() function</span> </div>
+            <div><input type="radio" name="question8" value=""> <span>By calling console.log()</span> </div>
+            <div><input type="radio" name="question8" value=""> <span>With the prompt() function</span> </div>
+            <div><input type="radio" name="question8" value=""> <span>Using the confirm() function</span> </div>
+        </div>
+
+        <div class="question" id="question9" style="display: none;">
+            <div>What is the purpose of the try...catch statement in JavaScript?</div>
+            <div><input type="radio" name="question8" value=""> <span>It defines a new function.</span> </div>
+            <div><input type="radio" name="question8" value=""> <span>It creates a loop in the code.</span> </div>
+            <div><input type="radio" name="question8" value=""> <span>It pauses the execution of code.</span> </div>
+            <div><input type="radio" name="question8" value=""> <span>It handles errors and exceptions in code execution.</span> </div>
+        </div>
+
+        <div class="question" id="question10" style="display: none;">
+            <div>Which method is used to remove the last element from an array in JavaScript?</div>
+            <div><input type="radio" name="question8" value=""> <span>removeLast()</span> </div>
+            <div><input type="radio" name="question8" value=""> <span>deleteLast()</span> </div>
+            <div><input type="radio" name="question8" value=""> <span>pop()</span> </div>
+            <div><input type="radio" name="question8" value=""> <span>pop()</span> </div>
+        </div>
+        <input type="button" value="Send" id="send">
+        <div id="timeLeft"></div>
+    </form>
+
+    <script>
+
+        const questions = document.querySelectorAll('.question');
+        let timeLeft = document.getElementById("timeLeft");
+        
+        
+         
+
+        var currentIteration = 1; // начальная итерация  
+        let i = 0;
+
+        function iterateEvery10Seconds() {
+            questions[i].style.display = "block";
+
+
+            timeLeft.innerText = "Time left: " + currentIteration + " second";
+            console.log("Итерация " + currentIteration);
+            currentIteration++;
+
+            if (currentIteration > 3) {
+                timeLeft.innerText = "";
+                questions[i].style.display = "none";
+
+                i++;
+                currentIteration = 1;
+                clearInterval(intervalId);
+                if (i < questions.length)
+                    intervalId = setInterval(iterateEvery10Seconds, 1000);
+            }
+        }
+        var intervalId = setInterval(iterateEvery10Seconds, 1000);
+
+
+        let send = document.getElementById("send");
+
+        send.addEventListener("click", function (e) {
+            timeLeft.innerText = "";
+            questions[i].style.display = "none";
+                i++;
+                currentIteration = 1;
+                clearInterval(intervalId);
+                if (i < questions.length)
+                    intervalId = setInterval(iterateEvery10Seconds, 1000);
+                //else {
+
+                //}
+        });
+
+        
+    
+
+
+        
+    </script>
+  </body>
+</html>
