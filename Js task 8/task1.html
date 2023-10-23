@@ -6,6 +6,7 @@
     <title>Объект Window</title>
     <style>
         body {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -15,6 +16,7 @@
             border: 2px solid black;
             border-radius: 10px;
             padding: 10px;
+            background-color:azure;
         }
         table {
             width: 100%;
@@ -24,6 +26,8 @@
             padding: 5px;
         }
         input {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-radius: 10px;
             padding: 3px;
         }
         .button {
@@ -38,57 +42,63 @@
             vertical-align: top;
             vertical-align: top;
         }
+        select {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-radius: 10px;
+            border: 2px solid black;
+            padding: 3px;
+        }
     </style>
   </head>
   <body>
     <div class="main">  
-        <form name="form1" >
+        <form name="form1">
             <table >
                 <tr>
                     <td class="allignright">Login</td>
                     <td>
-                        <input type="text" name="login" id="login" value="">
+                        <input type="text" name="login" id="login" value="" required>
                     </td>
                 </tr>
                 <tr>
                     <td class="allignright">Password</td>
                     <td>
-                        <input type="password" name="password" id="password" value="">
+                        <input type="password" name="password" id="password" value="" required>
                     </td>
                 </tr>
                 <tr>
                     <td class="allignright">Confirnation</td>
                     <td>
-                        <input type="password" name="confirnation" id="confirnation" value="">
+                        <input type="password" name="confirnation" id="confirnation" value="" required>
                     </td>
                 </tr>
                 <tr>
                     <td class="allignright">Full name</td>
                     <td>
-                        <input type="text" name="full_name" id="full_name" value="">
+                        <input type="text" name="full_name" id="full_name" value="" required>
                     </td>
                 </tr>
                 <tr>
-                    <td class="allignrighttop">Sex</td>
+                    <td class="allignrighttop">Gender</td>
                     <td>
-                        <input type="radio" name="sex" value="male" > Male <br>
-                        <input type="radio" name="sex" value="female" > Female <br>
-                        <input type="radio" name="sex" value="other" > Other  
+                        <input type="radio" name="gender" value="male" > Male <br>
+                        <input type="radio" name="gender" value="female" > Female <br>
+                        <input type="radio" name="gender" value="other" > Other  
                     </td>
                 </tr>
                 <tr>
                     <td class="allignrighttop">Specialization</td>
                     <td>
-                        <input type="checkbox" name="spec1" value="design" > Design <br>
-                        <input type="checkbox" name="spec2" value="programming" > Programming <br>
-                        <input type="checkbox" name="spec3" value="administration" > Administration  
+                        <input type="checkbox" id="checkbox1" name="option" value="design" > Design <br>
+                        <input type="checkbox" id="checkbox2" name="option" value="programming" > Programming <br>
+                        <input type="checkbox" id="checkbox3" name="option" value="administration" > Administration  
                     </td>
                 </tr>
                 <tr>
                     <td class="allignright">Position</td>
                     <td>
-                        <select name="position" style="width: 100%; padding: 3px;">
-                            <option value="null">-----------Choose---------</option>
+                        <select id="position" name="position" style="width: 100%; padding: 3px;">
+                            <option value="">Choose</option>
                             <option value="director">Director</option>
                             <option value="deputy_director">Deputy Director</option>
                             <option value="department_head">Department head</option>
@@ -138,18 +148,125 @@
                 else return false;
             }
         }
+        function checkPassword1() {
+            let password = document.getElementById("password");
+            if (password.value.length < 3 || password.value.length > 10) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        function checkPassword2() {
+            let password = document.getElementById("password");
+            var regex = /[A-ZА-Я]/;
+            if (regex.test(password.value)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function isChecked1() {
+            let radiobtns = document.querySelectorAll('input[type="radio"][name="gender"]');
+            for (let i = 0; i < radiobtns.length; i++){
+                if (radiobtns[i].checked)
+                    return true;
+            }
+            return false;
+        }
+        function isChecked2() {
+            let checkbxs = document.querySelectorAll('input[type="checkbox"][name="option"]');
+            for (let i = 0; i < checkbxs.length; i++){
+                if (checkbxs[i].checked)
+                    return true;
+            }
+            return false;
+        }
+        function isChoosen() {
+            let position = document.getElementById("position");
+            if (position.value === "")
+                return false;
+            else return true;
+        }
+        function createNewWindow() {
+            let newWin = window.open(
+            "",
+            "",
+            "width=300, height=350, left=350, top=50, resizable=yes, menubar=yes, toolbar=yes, location=yes, scrollbars=yes"
+            );
+            let login = document.getElementById("login").value;
+            let name = document.getElementById("full_name").value;
 
+            let gender;
+            let radiobtns = document.querySelectorAll('input[type="radio"][name="gender"]');
+            for (let i = 0; i < radiobtns.length; i++){
+                if (radiobtns[i].checked)
+                    gender = radiobtns[i].value;
+            }
 
+            let spec = "";
+            let checkbxs = document.querySelectorAll('input[type="checkbox"][name="option"]');
+            for (let i = 0; i < checkbxs.length; i++){
+                if (checkbxs[i].checked)
+                    spec += checkbxs[i].value + " ";
+            }
+            
+            let position = document.getElementById("position");
+            let pos = position.value; 
+
+            newWin.document.write("<table style=\"border: 2px dotted black; border-collapse: collapse; width: 100%;\">");
+            newWin.document.write("<tr>");
+                newWin.document.write("<td style=\" border: 2px dotted black; margin: 0; padding: 5px;\"> Login </td>");
+                newWin.document.write("<td style=\" border: 2px dotted black; margin: 0; padding: 5px;\"> " + login + " </td>");
+            newWin.document.write("</tr>")
+            newWin.document.write("<tr >");
+                newWin.document.write("<td style=\" border: 2px dotted black; margin: 0; padding: 5px;\"> Full name </td>");
+                newWin.document.write("<td style=\" border: 2px dotted black; margin: 0; padding: 5px;\"> " + name + " </td>");
+            newWin.document.write("</tr>")
+            newWin.document.write("<tr >");
+                newWin.document.write("<td style=\" border: 2px dotted black; margin: 0; padding: 5px;\"> Gender </td>");
+                newWin.document.write("<td style=\" border: 2px dotted black; margin: 0; padding: 5px;\"> " + gender + " </td>");
+            newWin.document.write("</tr>")
+            newWin.document.write("<tr >");
+                newWin.document.write("<td style=\" border: 2px dotted black; margin: 0; padding: 5px;\"> Specialization </td>");
+                newWin.document.write("<td style=\" border: 2px dotted black; margin: 0; padding: 5px;\"> " + spec + " </td>");
+            newWin.document.write("</tr>")
+            newWin.document.write("<tr >");
+                newWin.document.write("<td style=\" border: 2px dotted black; margin: 0; padding: 5px;\"> Position </td>");
+                newWin.document.write("<td style=\" border: 2px dotted black; margin: 0; padding: 5px;\"> " + pos + " </td>");
+            newWin.document.write("</tr>")
+            newWin.document.write("</table>");
+        }
+        
         let snd = document.getElementById("button_send");
 
         document.querySelector("form").addEventListener("submit", function(event) {
-            if (!comparePasswords()){
+            if (!checkPassword1()) {
+                alert("The password length must be from 3 to 10 characters!");
+                event.preventDefault();
+            }
+            else if (!checkPassword2()) {
+                alert("Password must contain at least 1 capital letter!");
+                event.preventDefault();
+            }
+            else if (!comparePasswords()){
                 alert("The passwords are not equals!");
                 event.preventDefault();
             }
+            else if (!isChecked1()){
+                alert("Choose your gender!");
+                event.preventDefault();
+            }
+            else if (!isChecked2()){
+                alert("Choose your specialization!");
+                event.preventDefault();
+            }
+            else if (!isChoosen()) {
+                alert("Choose your position!");
+                event.preventDefault();
+            }
+            else createNewWindow();
         });
-
-
     </script>
   </body>
 </html>
