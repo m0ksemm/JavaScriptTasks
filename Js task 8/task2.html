@@ -5,211 +5,318 @@
     <meta charset="utf-8" />
     <title>JS task 8.2</title>
     <style>
-        .question {
-            background-color: #eeeeee;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-        }
-        .number {
-            font-size: 1.2em;
-            font-weight: bold;
-            padding: 5px;
-        }
-        .question div {
-            margin-top: 10px;
-        }
-        #send {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            width: 100px;
-            height: 30px;
-            border-radius: 10px;
-
-        }
+      .question {
+        background-color: #eeeeee;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+      .number {
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 5px;
+      }
+      .question div {
+        margin-top: 10px;
+      }
+      #send {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+      }
     </style>
   </head>
   <body>
     <form name="form1">
-        <div class="number" id="questionnum" >Question 1</div>
-        <div class="question" style="display: none;">
-            <div>In what year was JavaScript invented?</div>
-            <div><input type="radio" name="answer" value="1"> <span>2010</span> </div>
-            <div><input type="radio" name="answer" value="2"> <span>1995</span> </div>
-            <div><input type="radio" name="answer" value="3"> <span>1980</span> </div>
-            <div><input type="radio" name="answer" value="4"> <span>1970</span> </div>
-        </div> 
-
-        <div class="question" style="display: none;">
-            <div>Which keywords are used to declare a variable in JavaScript??</div>
-            <div><input type="checkbox" name="answer" value="1"> <span>const</span> </div>
-            <div><input type="checkbox" name="answer" value="2"> <span>variable</span> </div>
-            <div><input type="checkbox" name="answer" value="3"> <span>let</span> </div>
-            <div><input type="checkbox" name="answer" value="4"> <span>var</span> </div>
-        </div> 
-
-        <div class="question" style="display: none;">
-            <div>What is the result of the expression 5 + '5' in JavaScript?</div>
-            <div><input type="radio" name="answer" value="1"> <span>10</span> </div>
-            <div><input type="radio" name="answer" value="2"> <span>55</span> </div>
-            <div><input type="radio" name="answer" value="3"> <span>25</span> </div>
-            <div><input type="radio" name="answer" value="4"> <span>'55'</span> </div>
-        </div> 
-
-        <div class="question" style="display: none;">
-            <div>Which function is used to print content to the console in JavaScript?</div>
-            <div><input type="radio" name="answer" value="1"> <span>print()</span> </div>
-            <div><input type="radio" name="answer" value="2"> <span>display()</span> </div>
-            <div><input type="radio" name="answer" value="3"> <span>output()</span> </div>
-            <div><input type="radio" name="answer" value="4"> <span>console.log()</span> </div>
-        </div> 
-
-        <div class="question" style="display: none;">
-            <div>What does the === operator in JavaScript test for?</div>
-            <div><input type="radio" name="answer" value="1"> <span>Equality</span> </div>
-            <div><input type="radio" name="answer" value="2"> <span>Assignment</span> </div>
-            <div><input type="radio" name="answer" value="3"> <span>Strict equality</span> </div>
-            <div><input type="radio" name="answer" value="4"> <span>Inequality</span> </div>
-        </div> 
-
-        <div class="question" style="display: none;">
-            <div>Which event is triggered when an HTML form is submitted in JavaScript?</div>
-            <div><input type="radio" name="answer" value="1"> <span>onClick</span> </div>
-            <div><input type="radio" name="answer" value="2"> <span>onHover</span> </div>
-            <div><input type="radio" name="answer" value="3"> <span>onSubmit</span> </div>
-            <div><input type="radio" name="answer" value="4"> <span>onChange</span> </div>
-        </div> 
-
-        <div class="question" style="display: none;">
-            <div>What is the difference between let and const for variable declaration in JavaScript?</div>
-            <div><input type="radio" name="answer" value="1"> <span>let allows reassignment, while const does not.</span> </div>
-            <div><input type="radio" name="answer" value="2"> <span>let is used for global variables, while const is used for local variables.</span> </div>
-            <div><input type="radio" name="answer" value="3"> <span>let is block-scoped, while const is function-scoped.</span> </div>
-            <div><input type="radio" name="answer" value="4"> <span>let allows reassignment, while const creates a constant reference to the value.</span> </div>
+      <div class="number" id="questionnum">Question 1</div>
+      <div class="question" style="display: none">
+        <div>In what year was JavaScript invented?</div>
+        <div>
+          <input type="radio" name="answer" value="1" /> <span>2010</span>
         </div>
-
-        <div class="question" style="display: none;">
-            <div>How do you create a pop-up dialog box in JavaScript?</div>
-            <div><input type="radio" name="answer" value="1"> <span>Using the alert() function</span> </div>
-            <div><input type="radio" name="answer" value="2"> <span>By calling console.log()</span> </div>
-            <div><input type="radio" name="answer" value="3"> <span>With the prompt() function</span> </div>
-            <div><input type="radio" name="answer" value="4"> <span>Using the confirm() function</span> </div>
+        <div>
+          <input type="radio" name="answer" value="2" /> <span>1995</span>
         </div>
-
-        <div class="question" style="display: none;">
-            <div>What is the purpose of the try...catch statement in JavaScript?</div>
-            <div><input type="radio" name="answer" value="1"> <span>It defines a new function.</span> </div>
-            <div><input type="radio" name="answer" value="2"> <span>It creates a loop in the code.</span> </div>
-            <div><input type="radio" name="answer" value="3"> <span>It pauses the execution of code.</span> </div>
-            <div><input type="radio" name="answer" value="4"> <span>It handles errors and exceptions in code execution.</span> </div>
+        <div>
+          <input type="radio" name="answer" value="3" /> <span>1980</span>
         </div>
-
-        <div class="question" style="display: none;">
-            <div>Which method is used to remove the last element from an array in JavaScript?</div>
-            <div><input type="radio" name="answer" value="1"> <span>removeLast()</span> </div>
-            <div><input type="radio" name="answer" value="2"> <span>pop()</span> </div>
-            <div><input type="radio" name="answer" value="3"> <span>deleteLast()</span> </div>
-            <div><input type="radio" name="answer" value="4"> <span>delete()</span> </div>
+        <div>
+          <input type="radio" name="answer" value="4" /> <span>1970</span>
         </div>
-        <input type="button" value="Send" id="send" style="display: none;">
-        <div id="timeLeft"></div>
+      </div>
+
+      <div class="question" style="display: none">
+        <div>Which keywords are used to declare a variable in JavaScript??</div>
+        <div>
+          <input type="checkbox" name="answer" value="1" /> <span>const</span>
+        </div>
+        <div>
+          <input type="checkbox" name="answer" value="2" />
+          <span>variable</span>
+        </div>
+        <div>
+          <input type="checkbox" name="answer" value="3" /> <span>let</span>
+        </div>
+        <div>
+          <input type="checkbox" name="answer" value="4" /> <span>var</span>
+        </div>
+      </div>
+
+      <div class="question" style="display: none">
+        <div>What is the result of the expression 5 + '5' in JavaScript?</div>
+        <div>
+          <input type="radio" name="answer" value="1" /> <span>10</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="2" /> <span>55</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="3" /> <span>25</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="4" /> <span>'55'</span>
+        </div>
+      </div>
+
+      <div class="question" style="display: none">
+        <div>
+          Which function is used to print content to the console in JavaScript?
+        </div>
+        <div>
+          <input type="radio" name="answer" value="1" /> <span>print()</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="2" /> <span>display()</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="3" /> <span>output()</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="4" />
+          <span>console.log()</span>
+        </div>
+      </div>
+
+      <div class="question" style="display: none">
+        <div>What does the === operator in JavaScript test for?</div>
+        <div>
+          <input type="radio" name="answer" value="1" /> <span>Equality</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="2" /> <span>Assignment</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="3" />
+          <span>Strict equality</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="4" /> <span>Inequality</span>
+        </div>
+      </div>
+
+      <div class="question" style="display: none">
+        <div>
+          Which event is triggered when an HTML form is submitted in JavaScript?
+        </div>
+        <div>
+          <input type="radio" name="answer" value="1" /> <span>onClick</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="2" /> <span>onHover</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="3" /> <span>onSubmit</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="4" /> <span>onChange</span>
+        </div>
+      </div>
+
+      <div class="question" style="display: none">
+        <div>
+          What is the difference between let and const for variable declaration
+          in JavaScript?
+        </div>
+        <div>
+          <input type="radio" name="answer" value="1" />
+          <span>let allows reassignment, while const does not.</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="2" />
+          <span
+            >let is used for global variables, while const is used for local
+            variables.</span
+          >
+        </div>
+        <div>
+          <input type="radio" name="answer" value="3" />
+          <span>let is block-scoped, while const is function-scoped.</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="4" />
+          <span
+            >let allows reassignment, while const creates a constant reference
+            to the value.</span
+          >
+        </div>
+      </div>
+
+      <div class="question" style="display: none">
+        <div>How do you create a pop-up dialog box in JavaScript?</div>
+        <div>
+          <input type="radio" name="answer" value="1" />
+          <span>Using the alert() function</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="2" />
+          <span>By calling console.log()</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="3" />
+          <span>With the prompt() function</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="4" />
+          <span>Using the confirm() function</span>
+        </div>
+      </div>
+
+      <div class="question" style="display: none">
+        <div>
+          What is the purpose of the try...catch statement in JavaScript?
+        </div>
+        <div>
+          <input type="radio" name="answer" value="1" />
+          <span>It defines a new function.</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="2" />
+          <span>It creates a loop in the code.</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="3" />
+          <span>It pauses the execution of code.</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="4" />
+          <span>It handles errors and exceptions in code execution.</span>
+        </div>
+      </div>
+
+      <div class="question" style="display: none">
+        <div>
+          Which method is used to remove the last element from an array in
+          JavaScript?
+        </div>
+        <div>
+          <input type="radio" name="answer" value="1" />
+          <span>removeLast()</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="2" /> <span>pop()</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="3" />
+          <span>deleteLast()</span>
+        </div>
+        <div>
+          <input type="radio" name="answer" value="4" /> <span>delete()</span>
+        </div>
+      </div>
+      <input type="button" value="Send" id="send" style="display: none" />
+      <div id="timeLeft"></div>
     </form>
 
     <script>
-        let answers = ["W","TNPRM","Q","Q","V","V","Q","Q","Q","W"];
-        const questions = document.querySelectorAll('.question');
-        let timeLeft = document.getElementById("timeLeft");
-        let sendbtn = document.getElementById("send");
-        let questionnum = document.getElementById("questionnum");
-        let userAnswers = [];
-        let name = prompt("Please, enter your name: ");
+      let answers = ["W", "TNPRM", "Q", "Q", "V", "V", "Q", "Q", "Q", "W"];
+      const questions = document.querySelectorAll(".question");
+      let timeLeft = document.getElementById("timeLeft");
+      let sendbtn = document.getElementById("send");
+      let questionnum = document.getElementById("questionnum");
+      let userAnswers = [];
+      let name = prompt("Please, enter your name: ");
 
-        function check() {
-            let result = 0;
-            for (let i = 0; i < 10; i++) {
-                if (userAnswers[i] == (decryptXOR(answers[i], "encryptXORkey") + " ") )
-                    result++;
-            }
-            alert(name + ", your result = " + result+ "/10");
-
+      function check() {
+        let result = 0;
+        for (let i = 0; i < 10; i++) {
+          if (userAnswers[i] == decryptXOR(answers[i], "encryptXORkey") + " ")
+            result++;
         }
-         
-        let k = 0;
-        var currentIteration = 30;
-        let i = 0;
+        alert(name + ", your result = " + result + "/10");
+      }
 
-        function iterateEvery10Seconds() {
-            questions[i].style.display = "block";
-            sendbtn.style.display = "block";
-            questionnum.innerText = "Question " + (i + 1);
+      let k = 0;
+      var currentIteration = 30;
+      let i = 0;
 
-            timeLeft.innerText = "Time left: " + currentIteration + " second";
-            console.log("Итерация " + currentIteration);
-            currentIteration--;
+      function iterateEvery10Seconds() {
+        questions[i].style.display = "block";
+        sendbtn.style.display = "block";
+        questionnum.innerText = "Question " + (i + 1);
 
-            if (currentIteration == 0) {
-                timeLeft.innerText = "";
-                questions[i].style.display = "none";
-                sendbtn.style.display = "none";
-                let answ = [];
-                    for (let j = 0; j < 4; j++){
-                        if (form1.answer[k].checked)
-                            answ += form1.answer[k].value + " ";
-                        k++;
-                    }
-                    if (answ == "")
-                        answ = 0;
-                    userAnswers.push(answ);
+        timeLeft.innerText = "Time left: " + currentIteration + " second";
+        console.log("Итерация " + currentIteration);
+        currentIteration--;
 
-                i++;
-                currentIteration = 30;
-                clearInterval(intervalId);
-                if (i < questions.length)
-                    intervalId = setInterval(iterateEvery10Seconds, 1000);
-                else {
-                     check();
-                }
-            }
+        if (currentIteration == 0) {
+          timeLeft.innerText = "";
+          questions[i].style.display = "none";
+          sendbtn.style.display = "none";
+          let answ = [];
+          for (let j = 0; j < 4; j++) {
+            if (form1.answer[k].checked) answ += form1.answer[k].value + " ";
+            k++;
+          }
+          if (answ == "") answ = 0;
+          userAnswers.push(answ);
+
+          i++;
+          currentIteration = 30;
+          clearInterval(intervalId);
+          if (i < questions.length)
+            intervalId = setInterval(iterateEvery10Seconds, 1000);
+          else {
+            check();
+          }
         }
-        var intervalId = setInterval(iterateEvery10Seconds, 1000);
+      }
+      var intervalId = setInterval(iterateEvery10Seconds, 1000);
 
+      let send = document.getElementById("send");
 
-        let send = document.getElementById("send");
-
-
-        function decryptXOR(encryptedMessage, key) {
-            let result = "";
-            for (let i = 0; i < encryptedMessage.length; i++) {
-                result += String.fromCharCode(encryptedMessage.charCodeAt(i) ^ key.charCodeAt(i % key.length));
-            }
-            return result;
+      function decryptXOR(encryptedMessage, key) {
+        let result = "";
+        for (let i = 0; i < encryptedMessage.length; i++) {
+          result += String.fromCharCode(
+            encryptedMessage.charCodeAt(i) ^ key.charCodeAt(i % key.length)
+          );
         }
+        return result;
+      }
 
-        send.addEventListener("click", function (e) {
-            timeLeft.innerText = "";
-            questions[i].style.display = "none";
-            sendbtn.style.display = "none";
-                let answ = [];
-                    for (let j = 0; j < 4; j++){
-                        if (form1.answer[k].checked)
-                            answ += form1.answer[k].value + " ";
-                        k++;
-                    }
-                    if (answ == "")
-                        answ = 0;
-                    userAnswers.push(answ);
+      send.addEventListener("click", function (e) {
+        timeLeft.innerText = "";
+        questions[i].style.display = "none";
+        sendbtn.style.display = "none";
+        let answ = [];
+        for (let j = 0; j < 4; j++) {
+          if (form1.answer[k].checked) answ += form1.answer[k].value + " ";
+          k++;
+        }
+        if (answ == "") answ = 0;
+        userAnswers.push(answ);
 
-                i++;
-                currentIteration = 30;
-                clearInterval(intervalId);
-                if (i < questions.length)
-                    intervalId = setInterval(iterateEvery10Seconds, 1000);
-                else {
-                     check();
-                }
-        });
-
-
+        i++;
+        currentIteration = 30;
+        clearInterval(intervalId);
+        if (i < questions.length)
+          intervalId = setInterval(iterateEvery10Seconds, 1000);
+        else {
+          check();
+        }
+      });
     </script>
   </body>
 </html>
