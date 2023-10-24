@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+    <body>
+        <script>
+            //this is a program for encryption of answers 
+            function encryptXOR(message, key) {
+                let result = "";
+                for (let i = 0; i < message.length; i++) {
+                    result += String.fromCharCode(message.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+                }
+                return result;
+            }
+            const key = "encryptXORkey";
+
+            let answers = [];
+            for (let i = 0; i < 10; i++) {
+                answers.push(prompt("Enter the number:"));
+            }
+            for (let i = 0; i < 10; i++) {
+                answers[i] = encryptXOR(answers[i], key);
+            }
+            alert(answers);
+            
+            //a decryption function
+            /*function decryptXOR(encryptedMessage, key) {
+                let result = "";
+                for (let i = 0; i < encryptedMessage.length; i++) {
+                    result += String.fromCharCode(encryptedMessage.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+                }
+                return result;
+            }*/
+        </script>
+    </body>
+</html>

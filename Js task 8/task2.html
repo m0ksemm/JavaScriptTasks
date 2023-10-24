@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Объект Window</title>
+    <title>JS task 8.2</title>
     <style>
         .question {
             background-color: #eeeeee;
@@ -18,6 +18,14 @@
         }
         .question div {
             margin-top: 10px;
+        }
+        #send {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+
         }
     </style>
   </head>
@@ -99,8 +107,8 @@
         <div class="question" style="display: none;">
             <div>Which method is used to remove the last element from an array in JavaScript?</div>
             <div><input type="radio" name="answer" value="1"> <span>removeLast()</span> </div>
-            <div><input type="radio" name="answer" value="2"> <span>deleteLast()</span> </div>
-            <div><input type="radio" name="answer" value="3"> <span>pop()</span> </div>
+            <div><input type="radio" name="answer" value="2"> <span>pop()</span> </div>
+            <div><input type="radio" name="answer" value="3"> <span>deleteLast()</span> </div>
             <div><input type="radio" name="answer" value="4"> <span>delete()</span> </div>
         </div>
         <input type="button" value="Send" id="send" style="display: none;">
@@ -108,17 +116,26 @@
     </form>
 
     <script>
-        
-
+        let answers = ["W","TNPRM","Q","Q","V","V","Q","Q","Q","W"];
         const questions = document.querySelectorAll('.question');
         let timeLeft = document.getElementById("timeLeft");
         let sendbtn = document.getElementById("send");
         let questionnum = document.getElementById("questionnum");
-         let userAnswers = [];
+        let userAnswers = [];
+        let name = prompt("Please, enter your name: ");
 
+        function check() {
+            let result = 0;
+            for (let i = 0; i < 10; i++) {
+                if (userAnswers[i] == (decryptXOR(answers[i], "encryptXORkey") + " ") )
+                    result++;
+            }
+            alert(name + ", your result = " + result+ "/10");
+
+        }
          
-         let k = 0;
-        var currentIteration = 1;
+        let k = 0;
+        var currentIteration = 30;
         let i = 0;
 
         function iterateEvery10Seconds() {
@@ -128,12 +145,12 @@
 
             timeLeft.innerText = "Time left: " + currentIteration + " second";
             console.log("Итерация " + currentIteration);
-            currentIteration++;
+            currentIteration--;
 
-            if (currentIteration > 4) {
+            if (currentIteration == 0) {
                 timeLeft.innerText = "";
                 questions[i].style.display = "none";
-                sendbtn.style.none = "none";
+                sendbtn.style.display = "none";
                 let answ = [];
                     for (let j = 0; j < 4; j++){
                         if (form1.answer[k].checked)
@@ -143,13 +160,15 @@
                     if (answ == "")
                         answ = 0;
                     userAnswers.push(answ);
-                    alert(userAnswers);
 
                 i++;
-                currentIteration = 1;
+                currentIteration = 30;
                 clearInterval(intervalId);
                 if (i < questions.length)
                     intervalId = setInterval(iterateEvery10Seconds, 1000);
+                else {
+                     check();
+                }
             }
         }
         var intervalId = setInterval(iterateEvery10Seconds, 1000);
@@ -157,30 +176,40 @@
 
         let send = document.getElementById("send");
 
+
+        function decryptXOR(encryptedMessage, key) {
+            let result = "";
+            for (let i = 0; i < encryptedMessage.length; i++) {
+                result += String.fromCharCode(encryptedMessage.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+            }
+            return result;
+        }
+
         send.addEventListener("click", function (e) {
             timeLeft.innerText = "";
-                questions[i].style.display = "none";
+            questions[i].style.display = "none";
+            sendbtn.style.display = "none";
                 let answ = [];
                     for (let j = 0; j < 4; j++){
                         if (form1.answer[k].checked)
                             answ += form1.answer[k].value + " ";
                         k++;
                     }
+                    if (answ == "")
+                        answ = 0;
                     userAnswers.push(answ);
-                    alert(userAnswers);
 
                 i++;
-                currentIteration = 1;
+                currentIteration = 30;
                 clearInterval(intervalId);
                 if (i < questions.length)
                     intervalId = setInterval(iterateEvery10Seconds, 1000);
+                else {
+                     check();
+                }
         });
 
-        
-    
 
-
-        
     </script>
   </body>
 </html>
