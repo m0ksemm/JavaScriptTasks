@@ -1,248 +1,368 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Cookie</title>
     <style>
-        #div1, #div2 {
-            display: none;
-        }
-        table.form_holder1 {
-            border-radius: 15px;
-            padding: 10px;
-            font: 10pt Tahoma;
-            background-color: #ddeeff;
-        }
+      #div1,
+      #div2 {
+        display: none;
+      }
+      table.form_holder1 {
+        border-radius: 15px;
+        padding: 10px;
+        font: 10pt Tahoma;
+        background-color: #ddeeff;
+      }
 
-        table.form_holder1 thead {
-            background-color: #334466;
-            color: white;
-            font-weight: bold;
-        }
+      table.form_holder1 thead {
+        background-color: #334466;
+        color: white;
+        font-weight: bold;
+      }
     </style>
-</head>
-<body onload="docLoad()">
+  </head>
+  <body onload="docLoad()">
     <form name="form1">
-        <table class="form_holder1" cellspacing="1">
-            <thead>
-                <tr>
-                    <td colspan="2" align="center">Registration on server:</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Login:</td>
-                    <td><input size="26" type="text" name="text_login" value="" required /></td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td><input size="26" type="password" name="text_password1" id="password" required /></td>
-                </tr>
-                <tr>
-                    <td>Confirmation:</td>
-                    <td><input size="26" type="password" name="text_password2" required /></td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><hr /></td>
-                </tr>
-                <tr>
-                    <td>Full name:</td>
-                    <td><input size="26" type="text" id="full_name" name="fullname" value="" required /></td>
-                </tr>
-                <tr style="vertical-align:top">
-                    <td>Gender</td>
-                    <td>
-                        <input type="radio" name="radio_gender" value="male" />male<br />
-                        <input type="radio" name="radio_gender" value="female" />female<br />
-                        <input type="radio" name="radio_gender" value="other" />other<br />
-                    </td>
-                </tr>
-                <tr style="vertical-align:top">
-                    <td>Foreign<br />languages:</td>
-                    <td>
-                        <input type="checkbox" name="option" value="English" />English<br />
-                        <input type="checkbox" name="option" value="German" />German<br />
-                        <input type="checkbox" name="option" value="French" />French<br />
-                        <input type="checkbox" name="option" value="Spanish" />Spanish<br />
-                        <input type="checkbox" name="option" value="Italian" />Italian<br />
-                    </td>
-                </tr>
+      <table class="form_holder1" cellspacing="1">
+        <thead>
+          <tr>
+            <td colspan="2" align="center">Registration on server:</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Login:</td>
+            <td>
+              <input
+                size="26"
+                type="text"
+                name="text_login"
+                value=""
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td>
+              <input
+                size="26"
+                type="password"
+                name="text_password1"
+                id="password"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Confirmation:</td>
+            <td>
+              <input size="26" type="password" name="text_password2" required />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><hr /></td>
+          </tr>
+          <tr>
+            <td>Full name:</td>
+            <td>
+              <input
+                size="26"
+                type="text"
+                id="full_name"
+                name="fullname"
+                value=""
+                required
+              />
+            </td>
+          </tr>
+          <tr style="vertical-align: top">
+            <td>Gender</td>
+            <td>
+              <input type="radio" name="radio_gender" value="male" />male<br />
+              <input
+                type="radio"
+                name="radio_gender"
+                value="female"
+              />female<br />
+              <input
+                type="radio"
+                name="radio_gender"
+                value="other"
+              />other<br />
+            </td>
+          </tr>
+          <tr style="vertical-align: top">
+            <td>Foreign<br />languages:</td>
+            <td>
+              <input
+                type="checkbox"
+                name="option"
+                value="English"
+              />English<br />
+              <input type="checkbox" name="option" value="German" />German<br />
+              <input type="checkbox" name="option" value="French" />French<br />
+              <input
+                type="checkbox"
+                name="option"
+                value="Spanish"
+              />Spanish<br />
+              <input
+                type="checkbox"
+                name="option"
+                value="Italian"
+              />Italian<br />
+            </td>
+          </tr>
 
-                <tr>
-                    <td>Field of activity:</td>
-                    <td>
-                        <select name="list_work">
-                            <option value="0">service</option>
-                            <option value="1" selected>education</option>
-                            <option value="2">medicine</option>
-                            <option value="3">science</option>
-                        </select>
-                    </td>
-                </tr>
+          <tr>
+            <td>Field of activity:</td>
+            <td>
+              <select name="list_work">
+                <option value="0">service</option>
+                <option value="1" selected>education</option>
+                <option value="2">medicine</option>
+                <option value="3">science</option>
+              </select>
+            </td>
+          </tr>
 
-                <tr>
-                    <td>e-mail</td>
-                    <td><input size="26" type="email" name="mail" value="" required  /></td>
-                </tr>
-                <tr style="vertical-align:top">
-                    <td>Additional<br />information:</td>
-                    <td>
-                        <textarea name="text_info" cols="20" rows="5"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        <input type="button" value="Save" onclick="btnClick()" />
-                        <input type="reset" value="Reset" />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+          <tr>
+            <td>e-mail</td>
+            <td>
+              <input size="26" type="email" name="mail" value="" required />
+            </td>
+          </tr>
+          <tr style="vertical-align: top">
+            <td>Additional<br />information:</td>
+            <td>
+              <textarea name="text_info" cols="20" rows="5"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <input type="button" value="Save" onclick="btnClick()" />
+              <input type="reset" value="Reset" />
+              <input
+                type="button"
+                value="Delete Cookie"
+                onclick="delCookie()"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </form>
+  </body>
+  <script>
+    let full_name = document.getElementById("full_name");
+    full_name.addEventListener("input", function (e) {
+      const full_nameValue = full_name.value;
+      if (/\d/.test(full_nameValue)) {
+        full_name.value = full_nameValue.replace(/\d/g, "");
+      }
+    });
+    function checkPassword1() {
+      let password = document.getElementById("password");
+      if (password.value.length < 3) {
+        alert("Password must be at least 3 characters long!");
+        return false;
+      } else {
+        return true;
+      }
+    }
+    function checkPassword2() {
+      let password = document.getElementById("password");
+      var regex = /[A-ZА-Я]/;
+      if (regex.test(password.value)) {
+        return true;
+      } else {
+        alert("Password must contain capital letters!");
+        return false;
+      }
+    }
 
-</body>
-    <script>
-
-          
-
-        let full_name = document.getElementById("full_name");
-        full_name.addEventListener("input", function (e) {
-            const full_nameValue = full_name.value;
-            if (/\d/.test(full_nameValue)) {
-                full_name.value = full_nameValue.replace(/\d/g, ""); 
-            }
-        });
-        function checkPassword1() {
-            let password = document.getElementById("password");
-            if (password.value.length < 3) {
-                alert("Password must be at least 3 characters long!");
-                return false;
-            }
-            else {
-                return true;
-            }
+    function btnClick() {
+      if (
+        form1.text_login.value.length == 0 ||
+        form1.text_password1.value.length == 0 ||
+        form1.fullname.value.length == 0 ||
+        form1.mail.value.length == 0 ||
+        form1.text_info.value.length == 0
+      ) {
+        alert("Please fill in all fields!");
+        return;
+      }
+      let flag = false;
+      let radiobtns = document.querySelectorAll(
+        'input[type="radio"][name="radio_gender"]'
+      );
+      for (let i = 0; i < radiobtns.length; i++) {
+        if (radiobtns[i].checked) flag = true;
+      }
+      if (!flag) {
+        alert("Please, choose your gender!");
+        return;
+      }
+      var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailPattern.test(form1.mail.value)) {
+        alert("The email is wrong!");
+        return;
+      }
+      if (
+        form1.text_password1.value.length === form1.text_password2.value.length
+      ) {
+        for (let i = 0; i < form1.text_password1.value.length; i++) {
+          if (form1.text_password1.value[i] != form1.text_password2.value[i]) {
+            alert("Passwords do not match!");
+            return;
+          }
         }
-        function checkPassword2() {
-            let password = document.getElementById("password");
-            var regex = /[A-ZА-Я]/;
-            if (regex.test(password.value)) {
-                return true;
-            } else {
-                alert("Password must contain capital letters!");
-                return false;
-            }
+      } else {
+        alert("Passwords do not match!");
+        return;
+      }
+      if (!checkPassword1()) return;
+      if (!checkPassword2()) return;
+
+      flag = false;
+      let chousenOption = "";
+      let checkbxs = document.querySelectorAll(
+        'input[type="checkbox"][name="option"]'
+      );
+      for (let i = 0; i < checkbxs.length; i++) {
+        if (checkbxs[i].checked) {
+          chousenOption += checkbxs[i].value + " ";
+          flag = true;
         }
+      }
+      if (!flag) {
+        alert("Please, choose foreign languages that you know!");
+        return;
+      }
 
-        function btnClick() {
-            if (form1.text_login.value.length == 0 || form1.text_password1.value.length == 0 
-            || form1.fullname.value.length == 0 || form1.mail.value.length == 0 
-            || form1.text_info.value.length == 0) {
-                alert("Please fill in all fields!");
-                return;
-            }
-            let flag = false;
-            let radiobtns = document.querySelectorAll('input[type="radio"][name="radio_gender"]');
-            for (let i = 0; i < radiobtns.length; i++){
-                if (radiobtns[i].checked)
-                    flag =  true;
-            }
-            if (!flag) {
-                alert("Please, choose your gender!");
-                return;
-            }
-            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            if (!emailPattern.test(form1.mail.value)) {
-                alert("The email is wrong!");
-                return;
-            }
-            if (form1.text_password1.value.length === form1.text_password2.value.length) {
-                for (let i = 0; i < form1.text_password1.value.length; i++) {
-                    if (form1.text_password1.value[i] != form1.text_password2.value[i]) {
-                        alert("Passwords do not match!");
-                        return;
-                    }
-                }
-            }
-            else {
-                alert("Passwords do not match!");
-                return;
-            }
-            if (!checkPassword1())
-                return;
-            if (!checkPassword2())
-                return;
+      let d = new Date();
+      d.setMonth(d.getMonth() + 6);
+      document.cookie =
+        "1 LOGIN=" +
+        encodeURIComponent(form1.text_login.value) +
+        ";path=/;expires=" +
+        d.toUTCString() +
+        ";";
+      document.cookie =
+        "2 PASSWORD1=" +
+        encodeURIComponent(form1.text_password1.value) +
+        ";path=/;expires=" +
+        d.toUTCString() +
+        ";";
+      document.cookie =
+        "3 PASSWORD2=" +
+        encodeURIComponent(form1.text_password2.value) +
+        ";path=/;expires=" +
+        d.toUTCString() +
+        ";";
+      document.cookie =
+        "4 FULLNAME=" +
+        encodeURIComponent(form1.fullname.value) +
+        ";path=/;expires=" +
+        d.toUTCString() +
+        ";";
+      document.cookie =
+        "5 GENDER=" +
+        encodeURIComponent(form1.radio_gender.value) +
+        ";path=/;expires=" +
+        d.toUTCString() +
+        ";";
+      document.cookie =
+        "6 LANGUAGES=" +
+        encodeURIComponent(chousenOption) +
+        ";path=/;expires=" +
+        d.toUTCString() +
+        ";";
+      document.cookie =
+        "7 ACTIVITY=" +
+        encodeURIComponent(form1.list_work.value) +
+        ";path=/;expires=" +
+        d.toUTCString() +
+        ";";
+      document.cookie =
+        "8 EMAIL=" +
+        encodeURIComponent(form1.mail.value) +
+        ";path=/;expires=" +
+        d.toUTCString() +
+        ";";
+      document.cookie =
+        "9 INFORMATION=" +
+        encodeURIComponent(form1.text_info.value) +
+        ";path=/;expires=" +
+        d.toUTCString() +
+        ";";
+      alert("Data is saved!");
+    }
+    function docLoad() {
+      let str = document.cookie;
+      //alert(str);
+      if (str.length == 0) {
+        return;
+      }
+      let arr = str.split(";");
+      let login = arr[0].split("=")[1];
+      let password1 = arr[1].split("=")[1];
+      let password2 = arr[2].split("=")[1];
+      let name = arr[3].split("=")[1];
+      let radio_gender = arr[4].split("=")[1];
+      let languages = arr[5].split("=")[1];
+      let activity = arr[6].split("=")[1];
+      let email = arr[7].split("=")[1];
+      let info = arr[8].split("=")[1];
 
+      login = decodeURIComponent(login);
+      password1 = decodeURIComponent(password1);
+      password2 = decodeURIComponent(password2);
+      name = decodeURIComponent(name);
+      radio_gender = decodeURIComponent(radio_gender);
+      languages = decodeURIComponent(languages);
+      activity = decodeURIComponent(activity);
+      email = decodeURIComponent(email);
+      info = decodeURIComponent(info);
 
-            flag = false;
-            let chousenOption = "";
-            let checkbxs = document.querySelectorAll('input[type="checkbox"][name="option"]');
-            for (let i = 0; i < checkbxs.length; i++){
-                if (checkbxs[i].checked) {
-                    chousenOption += checkbxs[i].value + " ";
-                    flag = true;
-                }
-                    
-            }
-            if (!flag) {
-                alert("Please, choose foreign languages that you know!");
-                return;
-            }
+      form1.text_login.value = login;
+      form1.text_password1.value = password1;
+      form1.text_password2.value = password2;
+      form1.fullname.value = name;
+      form1.mail.value = email;
+      form1.text_info.value = info;
 
-            let d = new Date();
-            d.setMonth(d.getMonth() + 6);
-            document.cookie = "LOGIN=" + encodeURIComponent(form1.text_login.value) + ";path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "PASSWORD1=" + encodeURIComponent(form1.text_password1.value) + ";path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "PASSWORD2=" + encodeURIComponent(form1.text_password2.value) + ";path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "FULLNAME=" + encodeURIComponent(form1.fullname.value) + ";path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "GENDER=" + encodeURIComponent(form1.radio_gender.value) + ";path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "LANGUAGES=" + encodeURIComponent(chousenOption) + ";path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "ACTIVITY=" + encodeURIComponent(form1.list_work.value) + ";path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "EMAIL=" + encodeURIComponent(form1.mail.value) + ";path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "INFORMATION=" + encodeURIComponent(form1.text_info.value) + ";path=/;expires=" + d.toUTCString() + ";";
-            alert("Data is saved!");
+      form1.radio_gender.value = radio_gender;
+      let choices = languages.split(" ");
+      let k = 0;
+      let checkbxs = document.querySelectorAll(
+        'input[type="checkbox"][name="option"]'
+      );
+      for (let i = 0; i < checkbxs.length; i++) {
+        if (checkbxs[i].value == choices[k]) {
+          checkbxs[i].checked = true;
+          k++;
         }
-        function docLoad() {
-            let str = document.cookie;
-            alert(str);
-            if (str.length == 0) {
-                document.getElementById("div1").style.display = "block";
-                document.getElementById("div2").style.display = "none";
-                return;
-            }
-            let arr = str.split(';');
-            let firstname = arr[0].split('=')[1];
-            let lastname = arr[1].split('=')[1];
-            let age = arr[2].split('=')[1];
-            let country = arr[3].split('=')[1];
-            firstname = decodeURIComponent(firstname);
-            lastname = decodeURIComponent(lastname);
-            age = decodeURIComponent(age);
-            country = decodeURIComponent(country);
-            
-            document.getElementById("div1").style.display = "none";
-            document.getElementById("div2").style.display = "block";
-            document.getElementById("info").innerHTML = "Имя: " + firstname + "<br />" +
-                "Фамилия: " + lastname + "<br />" +
-                "Возраст: " + age + "<br />" +
-                "Страна: " + country + "<br />";
-        }
-        function delCookie() {
-            let d = new Date();
-            d.setMonth(d.getMonth() - 1);
-            document.cookie = "LOGIN=;path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "PASSWORD1=;path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "PASSWORD2=;path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "FULLNAME=;path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "GENDER=;path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "LANGUAGES=;path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "ACTIVITY=;path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "EMAIL=;path=/;expires=" + d.toUTCString() + ";";
-            document.cookie = "INFORMATION=;path=/;expires=" + d.toUTCString() + ";";
+      }
+      form1.list_work.value = activity;
+    }
+    function delCookie() {
+      let d = new Date();
+      d.setMonth(d.getMonth() - 1);
+      document.cookie = "1 LOGIN=;path=/;expires=" + d.toUTCString() + ";";
+      document.cookie = "2 PASSWORD1=;path=/;expires=" + d.toUTCString() + ";";
+      document.cookie = "3 PASSWORD2=;path=/;expires=" + d.toUTCString() + ";";
+      document.cookie = "4 FULLNAME=;path=/;expires=" + d.toUTCString() + ";";
+      document.cookie = "5 GENDER=;path=/;expires=" + d.toUTCString() + ";";
+      document.cookie = "6 LANGUAGES=;path=/;expires=" + d.toUTCString() + ";";
+      document.cookie = "7 ACTIVITY=;path=/;expires=" + d.toUTCString() + ";";
+      document.cookie = "8 EMAIL=;path=/;expires=" + d.toUTCString() + ";";
+      document.cookie = "9 INFORMATION=;path=/;expires=" + d.toUTCString() + ";";
 
-            alert("Cookie deleted successfully!!");
-        }
-
-    </script>
-
+      alert("Cookie deleted successfully!!");
+    }
+  </script>
 </html>
